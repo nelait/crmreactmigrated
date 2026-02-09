@@ -1,0 +1,46 @@
+:root {
+  --accent: #6366f1;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-card: #1e293b;
+  --bg-hover: #334155;
+  --bg-input: #0f172a;
+  --border: #334155;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --radius-lg: 14px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+button {
+  cursor: pointer;
+}
+
+input, select, textarea {
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  padding: 10px;
+  background: var(--bg-input);
+  color: var(--text-primary);
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+}
