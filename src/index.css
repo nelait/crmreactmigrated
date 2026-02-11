@@ -1,46 +1,148 @@
+/* src/index.css */
 :root {
-  --accent: #6366f1;
-  --success: #10b981;
-  --warning: #f59e0b;
-  --danger: #ef4444;
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  --bg-card: #1e293b;
-  --bg-hover: #334155;
-  --bg-input: #0f172a;
-  --border: #334155;
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  --radius: 10px;
-  --radius-sm: 6px;
-  --radius-lg: 14px;
+  --color-background: #fff;
+  --color-primary: #222;
+  --color-secondary: #ccc;
+  --color-accent: #f5f5f5;
+  --color-border: #ddd;
+  --color-link: #222;
+  --color-link-hover: #222;
+  --color-footer: #454545;
+
+  --font-family: Arial, sans-serif;
+  --font-size-base: 14px;
+  --font-size-logo: 100px;
+  --font-size-nav: 14px;
+  --font-size-table: 11px;
+  --font-size-footer: 11px;
+
+  --spacing-container-margin: 33px;
+  --spacing-container-padding: 20px;
+  --spacing-box-margin-top: 30px;
+  --spacing-box-padding-top: 10px;
+  --spacing-table-margin-top: 20px;
+  --spacing-footer-padding: 20px;
+  --spacing-footer-margin: 33px;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--bg-primary);
-  color: var(--text-primary);
+html, body {
+  background: var(--color-background);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  margin: 0;
+  padding: 0;
+  color: var(--color-primary);
 }
 
-h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
+.logo {
+  font-size: var(--font-size-logo);
+  font-weight: bolder;
+  letter-spacing: -6px;
+  color: var(--color-primary);
+  margin: 20px 30px;
 }
 
-button {
+.logo .number {
+  color: var(--color-primary);
+  opacity: 0.1;
+}
+
+.navigation {
+  margin-left: var(--spacing-container-margin);
+}
+.navigation a {
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: var(--font-size-nav);
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 2px solid var(--color-primary);
+  background: var(--color-primary);
+  color: #fff;
+  margin-right: 8px;
+  transition: background 0.15s, color 0.15s;
+}
+.navigation a.active,
+.navigation a:hover {
+  color: var(--color-link-hover);
+  background: transparent;
+}
+
+.container {
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-container-padding);
+  margin: var(--spacing-container-margin);
+  background: var(--color-background);
+}
+.container a {
+  color: var(--color-link);
+}
+.container table {
+  font-size: var(--font-size-table);
+  margin-top: var(--spacing-table-margin-top);
+  border-collapse: collapse;
+  width: 100%;
+}
+.container table thead td {
+  background-color: var(--color-accent);
+  padding: 4px 10px;
+}
+.container table tbody td {
+  padding: 4px 10px;
+}
+.container .box {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--spacing-box-padding-top);
+  margin-top: var(--spacing-box-margin-top);
+}
+.container input[type="text"],
+.container input[type="hidden"] {
+  background-color: var(--color-accent);
+  border: 0;
+  padding: 5px 10px;
+  margin-bottom: 8px;
+  font-size: var(--font-size-base);
+  width: 100%;
+  box-sizing: border-box;
+}
+.container input[type="submit"],
+.container button {
+  background-color: var(--color-secondary);
+  border: 0;
+  padding: 5px 10px;
   cursor: pointer;
+  font-size: var(--font-size-base);
+  margin-top: 5px;
+  margin-right: 5px;
+  transition: background 0.15s, color 0.15s;
+}
+.container input[type="submit"]:hover,
+.container button:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+.footer {
+  padding: var(--spacing-footer-padding);
+  margin: var(--spacing-footer-margin);
+  text-align: right;
+  font-size: var(--font-size-footer);
+  opacity: 0.5;
+}
+.footer a {
+  color: var(--color-footer);
 }
 
-input, select, textarea {
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  padding: 10px;
-  background: var(--bg-input);
-  color: var(--text-primary);
-}
-
-input:focus, select:focus, textarea:focus {
-  border-color: var(--accent);
-  outline: none;
+@media (max-width: 600px) {
+  .logo {
+    font-size: 48px;
+    margin: 16px 10px;
+  }
+  .container {
+    margin: 10px;
+    padding: 10px;
+  }
+  .navigation {
+    margin-left: 10px;
+  }
 }
